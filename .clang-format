@@ -1,0 +1,7 @@
+BasedOnStyle: Google
+AllowShortFunctionsOnASingleLine: false
+# ColumnLimit: 80
+# IndentWidth: 2
+# TabWidth: 4
+# UseTab: Never
+# BreakBeforeBraces: Attach
