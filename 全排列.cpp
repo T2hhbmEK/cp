@@ -1,20 +1,16 @@
 #include <bits/stdc++.h>
+#define maxn 15
 using namespace std;
-const int NMAX = 15;
 
 int n;
-int a[NMAX], vis[NMAX];
-
-void prt() {
-    for (int i = 1; i <= n; ++i) {
-        cout << a[i] << ' ';
-    }
-    cout << '\n';
-}
+int a[maxn];
+int vis[maxn];  // visited 标记是否访问
 
 void dfs(int k) {
     if (k > n) {
-        prt();
+        for (int i = 1; i <= n; ++i) {
+            cout << a[i] << " \n"[i == n];
+        }
         return;
     }
     for (int i = 1; i <= n; ++i) {
