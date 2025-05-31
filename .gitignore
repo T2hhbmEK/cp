@@ -36,3 +36,6 @@
 
 # playground
 /playground.*
+
+# vscode
+.vscode/
