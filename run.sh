@@ -5,6 +5,7 @@ flags="\
 -Wall \
 -Wextra \
 -Wpedantic \
+-Werror \
 -Wcast-align \
 -Wcast-qual \
 -Wdisabled-optimization \
