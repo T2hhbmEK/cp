@@ -5,3 +5,6 @@ find "$PWD" -type f -exec file {} + | grep -E 'ELF|executable' | grep -v 'text' 
 
 # Find and delete .exe files
 find "$PWD" -type f -name "*.exe" | tee /dev/stderr | xargs -r rm -f
+
+# Find and delete .dSYM folders
+find "$PWD" -type d -name "*.dSYM" | tee /dev/stderr | xargs -r rm -rf
