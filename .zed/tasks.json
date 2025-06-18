@@ -3,8 +3,8 @@
 // Example:
 [
   {
-    "label": "CXX",
-    "command": "BIN=$(mktemp) && g++-15 -std=c++14 -g -Wall -Wextra -Wpedantic -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -Wvla -fno-ms-extensions -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 $ZED_FILE -o $BIN && $BIN; rm $BIN; echo \"\\nPress [Enter] to continue...\"; read",
+    "label": "CC",
+    "command": "BIN=${ZED_FILE}.bin && g++-15 -std=c++14 -Wall -Wextra -Wpedantic -Werror $ZED_FILE -o $BIN && $BIN; rm $BIN; echo \"\\nPress [Enter] to continue...\"; read",
     "use_new_terminal": false,
     "reveal": "always",
     "hide": "on_success"
