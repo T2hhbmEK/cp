@@ -4,7 +4,7 @@
 [
   {
     "label": "CC",
-    "command": "BIN=${ZED_FILE}.bin && g++-15 -std=c++14 -Wall -Wextra -Wpedantic -Werror $ZED_FILE -o $BIN && $BIN; rm $BIN; echo \"\\nPress [Enter] to continue...\"; read",
+    "command": "bash $ZED_WORKTREE_ROOT/run.sh $ZED_FILE",
     "use_new_terminal": false,
     "reveal": "always",
     "hide": "on_success"
