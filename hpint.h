@@ -130,5 +130,4 @@ struct HPInt {  // High Precision Integer
     return z /= y;
   }
 };
-
 }  // namespace hpint
