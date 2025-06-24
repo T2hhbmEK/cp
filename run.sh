@@ -8,7 +8,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     bin=${bin}.bin
 fi
 flags="-std=c++14 -Wall -Wextra -Wpedantic -Werror"
-echo "$bin $@"
+echo "$bin $@" 1>&2
 $cxx $src -o $bin $flags && $(realpath $bin) $@
-echo Press any key to continue...
+echo Press any key to continue... 1>&2
 read
