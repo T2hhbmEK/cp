@@ -4,7 +4,7 @@ src=$1
 bin=${1%.*}
 shift 1
 if [[ "$(uname)" == "Darwin" ]]; then
-    cxx=g++-15
+    cxx=clang++
     bin=${bin}.bin
 fi
 flags="-std=c++14 -Wall -Wextra -Wpedantic -Werror"

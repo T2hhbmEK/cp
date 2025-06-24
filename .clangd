@@ -1,6 +1,6 @@
 CompileFlags:
   Add: [-std=c++14, -xc++, -Wall, -Wextra, -Wpedantic, -Werror]
-  Compiler: g++-15
+  # Compiler: g++-15
 Diagnostics:
   MissingIncludes: Strict
   UnusedIncludes: Strict
