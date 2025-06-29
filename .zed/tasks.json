@@ -1,9 +1,7 @@
-// Static tasks configuration.
-//
-// Example:
+// https://zed.dev/docs/tasks
 [
   {
-    "label": "CC",
+    "label": "CC $ZED_RELATIVE_FILE",
     "command": "bash $ZED_WORKTREE_ROOT/run.sh $ZED_FILE",
     "use_new_terminal": false,
     "reveal": "always",
