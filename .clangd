@@ -1,11 +1,11 @@
 CompileFlags:
-  Add: [-std=c++20, -Wall, -Wextra, -Wpedantic, -Werror, -Iinclude]
+  Add: [-std=c++20, -Wall, -Wextra, -Wpedantic, -Werror]
   Compiler: g++-15
 Diagnostics:
   ClangTidy:
     Add:
       - bugprone-*
-      # - cppcoreguidelines-*
+      - cppcoreguidelines-*
       - google-*
       - modernize-*
       - performance-*
