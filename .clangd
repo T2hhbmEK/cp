@@ -1,6 +1,22 @@
 CompileFlags:
-  Add: [-std=c++20, -Wall, -Wextra, -Wpedantic, -Werror]
-  # Compiler: g++-15
+  Add: [-std=c++20, -Wall, -Wextra, -Wpedantic, -Werror, -Iinclude]
+  Compiler: g++-15
 Diagnostics:
-  MissingIncludes: Strict
-  UnusedIncludes: Strict
+  ClangTidy:
+    Add:
+      - bugprone-*
+      # - cppcoreguidelines-*
+      - google-*
+      - modernize-*
+      - performance-*
+      - portability-*
+      - readability-*
+      - llvm-*
+    Remove:
+      - modernize-use-trailing-return-type
+      - readability-identifier-length
+      - google-build-using-namespace
+      - readability-braces-around-statements
+      - readability-isolate-declaration
+  MissingIncludes: None
+  UnusedIncludes: None
