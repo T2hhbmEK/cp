@@ -1,28 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define int long long
-using vi = vector<int>;
-using pii = pair<int, int>;
+[[maybe_unused]] constexpr auto inf = 0x3f3f3f3f;
+[[maybe_unused]] constexpr auto nl = '\n';
+[[maybe_unused]] constexpr auto maxn = 1010;
 
-#define endl '\n'
-#define debug(x) cerr << #x << ": " << x << endl
-#define rep(i, a, b) for (int i = (a); i <= (b); ++i)
-#define per(i, a, b) for (int i = (b); i >= (a); --i)
-#define each(a, x) for (auto& a : x)
-#define all(x) (x).begin(), (x).end()
-#define rall(x) (x).rbegin(), (x).rend()
-#define sz(x) (int)(x).size()
+using i32 = int32_t;
+using i64 = int64_t;
+using isize = i64;
+using pii = pair<i32, i32>;
+using vi = vector<i32>;
+using vii = vector<vi>;
+using ai = array<i32, maxn>;
+using aii = array<ai, maxn>;
+
 #define fi first
 #define se second
+#define rep(i, a, b) for (i32 i = (a); (i) <= (b); ++(i))
+#define per(i, a, b) for (i32 i = (a); (i) >= (b); --(i))
+#define sz(x) static_cast<i32>((x).size())
+#define all(x) (x).begin(), (x).end()
+#define fastio() cin.tie(nullptr)->sync_with_stdio(false)
 
-const int INF = 0x3f3f3f3f;  // ~=1e9
-const double EPS = 1e-9;
-
-const int maxn = 1e6 + 5;
-int n, a[maxn];
-
-signed main() {
-    cin.tie(0)->sync_with_stdio(0);
-    return 0;
+int main() {
+  fastio();
+  return 0;
 }
