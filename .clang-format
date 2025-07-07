@@ -1,8 +1,1 @@
 BasedOnStyle: Google
-# IndentWidth: 2
-# AllowShortFunctionsOnASingleLine: Empty
-# InsertBraces: true
-# ColumnLimit: 120
-# TabWidth: 4
-# UseTab: Never
-# BreakBeforeBraces: Attach

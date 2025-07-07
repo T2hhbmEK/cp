@@ -15,7 +15,8 @@
         // "path": "/usr/bin/clangd",
         "arguments": [
           // "--function-arg-placeholders=0",
-          "--query-driver=/opt/homebrew/bin/g++-15"
+          "--query-driver=/opt/homebrew/bin/g++-15",
+          "--header-insertion=never"
         ]
       }
     }

@@ -1,22 +1,41 @@
 CompileFlags:
-  Add: [-std=c++20, -Wall, -Wextra, -Wpedantic, -Werror]
+  Add:
+    [
+      -std=c++20,
+      -Wall,
+      -Wextra,
+      -Wpedantic,
+      -Werror,
+      -Wno-unused-variable,
+      -Wno-keyword-macro,
+    ]
   Compiler: g++-15
 Diagnostics:
   ClangTidy:
     Add:
       - bugprone-*
-      - cppcoreguidelines-*
+      # - cppcoreguidelines-*
       - google-*
+      - llvm-*
       - modernize-*
       - performance-*
       - portability-*
       - readability-*
-      - llvm-*
     Remove:
-      - modernize-use-trailing-return-type
-      - readability-identifier-length
+      # - cppcoreguidelines-*array*
+      # - cppcoreguidelines-*pointer*
+      # - cppcoreguidelines-avoid-non-const-global-variables
       - google-build-using-namespace
+      - modernize-avoid-c-arrays
+      - modernize-use-ranges
+      - modernize-use-trailing-return-type
       - readability-braces-around-statements
+      - readability-identifier-length
+      - readability-implicit-bool-conversion
       - readability-isolate-declaration
   MissingIncludes: None
   UnusedIncludes: None
+# Completion:
+#   HeaderInsertion: Never # clangd-21
+InlayHints:
+  Enabled: false
