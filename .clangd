@@ -25,6 +25,7 @@ Diagnostics:
       # - cppcoreguidelines-*array*
       # - cppcoreguidelines-*pointer*
       # - cppcoreguidelines-avoid-non-const-global-variables
+      - bugprone-easily-swappable-parameters
       - google-build-using-namespace
       - modernize-avoid-c-arrays
       - modernize-use-ranges
