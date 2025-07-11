@@ -23,10 +23,10 @@ void dijkstra() {
   while (!q.empty()) {
     int u = q.top().second;
     q.pop();
-    if (vis[u]) continue;
-    vis.set(u);
+    if (vis[C[u]]) continue;
+    vis.set(C[u]);
     for (auto& [v, d] : e[u]) {
-      if (dis[u] + d < dis[v]) {
+      if (dis[u] + d < dis[v] && !a[C[v]][C[u]]) {
         dis[v] = dis[u] + d;
         q.emplace(dis[v], v);
       }
@@ -40,6 +40,7 @@ void dfs(int u) {
     ans = min(ans, sum);
     return;
   }
+  if (vis[C[T]]) return;
   auto bak = vis;
   vis |= a[C[u]];
   for (const auto& [v, d] : e[u]) {
