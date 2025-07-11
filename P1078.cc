@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#define eprint(...) cerr << format(__VA_ARGS__)
+#define eprintln(...) cerr << format(__VA_ARGS__) << '\n'
 #define print(...) cout << format(__VA_ARGS__)
 #define println(...) cout << format(__VA_ARGS__) << '\n'
 #define MAXN 128
@@ -7,11 +9,13 @@ using namespace std;
 using pii = pair<int, int>;
 int N, K, M, S, T;
 int C[MAXN];
-vector<int> a[MAXN];  // a[j][i] i excluse j, j exclused by a[j]
+bitset<MAXN> a[MAXN];  // a[j][i] i excluse j, j exclused by a[j]
 unordered_map<int, int> e[MAXN];
-int dis[MAXN], vis[MAXN];
+int dis[MAXN];
 int ans = INF, sum = 0;
+bitset<MAXN> vis;
 void dijkstra() {
+  vis.reset();
   memset(dis, INF, sizeof(dis));
   priority_queue<pii, vector<pii>, greater<>> q;
   dis[T] = 0;
@@ -20,7 +24,7 @@ void dijkstra() {
     int u = q.top().second;
     q.pop();
     if (vis[u]) continue;
-    vis[u] = 1;
+    vis.set(u);
     for (auto& [v, d] : e[u]) {
       if (dis[u] + d < dis[v]) {
         dis[v] = dis[u] + d;
@@ -30,19 +34,20 @@ void dijkstra() {
   }
 }
 void dfs(int u) {
-  if (vis[C[u]] > 0) return;
+  if (vis[C[u]]) return;
   if (sum + dis[u] >= ans) return;
   if (u == T) {
     ans = min(ans, sum);
     return;
   }
-  for (auto& x : a[C[u]]) vis[x] += 1;
+  auto bak = vis;
+  vis |= a[C[u]];
   for (const auto& [v, d] : e[u]) {
     sum += d;
     dfs(v);
     sum -= d;
   }
-  for (auto& x : a[C[u]]) vis[x] -= 1;
+  vis = bak;
 }
 signed main() {
   ios_base::sync_with_stdio(false), cin.tie(nullptr);
@@ -51,7 +56,7 @@ signed main() {
   for (int i = 1; i <= K; ++i) {
     for (int j = 1, x; j <= K; ++j) {
       cin >> x;
-      if (x == 1 || i == j) a[j].push_back(i);
+      if (x == 1 || i == j) a[j].set(i);
     }
   }
   for (int i = 1; i <= M; ++i) {
@@ -65,7 +70,7 @@ signed main() {
     println("{}", -1);
     return 0;
   }
-  memset(vis, 0, sizeof(vis));
+  vis.reset();
   dfs(S);
   println("{}", ans == INF ? -1 : ans);
   return 0;
