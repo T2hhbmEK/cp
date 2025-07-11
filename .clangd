@@ -34,6 +34,7 @@ Diagnostics:
       - readability-identifier-length
       - readability-implicit-bool-conversion
       - readability-isolate-declaration
+      - readability-math-missing-parentheses
   MissingIncludes: None
   UnusedIncludes: None
 # Completion:
