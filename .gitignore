@@ -44,3 +44,8 @@
 # MacOS
 .DS_Store
 *.dSYM/
+
+# Testcases
+*.in
+*.out
+*.ans
