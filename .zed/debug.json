@@ -1,0 +1,14 @@
+// https://zed.dev/docs/debugger
+[
+  {
+    "label": "LLDB",
+    "build": {
+      "command": "g++-15 $ZED_FILENAME -g -o $ZED_DIRNAME/$ZED_STEM.bin",
+      "args": ["-std=c++20", "-Wall", "-Wextra", "-DDEBUG"],
+      "cwd": "$ZED_DIRNAME"
+    },
+    "program": "$ZED_DIRNAME/$ZED_STEM.bin",
+    "request": "launch",
+    "adapter": "CodeLLDB"
+  }
+]

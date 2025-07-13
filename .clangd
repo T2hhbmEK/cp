@@ -1,13 +1,13 @@
 CompileFlags:
-  Add:
-    [
+  Add: [
       -std=c++20,
       -Wall,
       -Wextra,
       -Wpedantic,
-      -Werror,
-      -Wno-unused-variable,
-      -Wno-keyword-macro,
+      # -Werror,
+      # -Wno-unused-variable,
+      # -Wno-unused-parameter,
+      # -Wno-keyword-macro,
     ]
   Compiler: g++-15
 Diagnostics:
@@ -30,6 +30,7 @@ Diagnostics:
       - modernize-avoid-c-arrays
       - modernize-use-ranges
       - modernize-use-trailing-return-type
+      - readability-avoid-return-with-void-value
       - readability-braces-around-statements
       - readability-identifier-length
       - readability-implicit-bool-conversion
