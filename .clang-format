@@ -1,1 +1,11 @@
-BasedOnStyle: Google
+# https://github.com/atcoder/ac-library/blob/master/.clang-format
+BasedOnStyle: "Chromium"
+IndentWidth: 2
+AccessModifierOffset: -1
+ColumnLimit: 256
+
+# for competitive programing
+AllowShortFunctionsOnASingleLine: All
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakTemplateDeclarations: false
