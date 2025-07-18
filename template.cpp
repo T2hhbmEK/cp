@@ -1,7 +1,12 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-  cin.tie(nullptr)->sync_with_stdio(false);
+void solve() {}
+
+signed main() {
+  ios_base::sync_with_stdio(false), cin.tie(nullptr);
+  int t = 1;
+  // cin >> t;
+  while (t--) solve();
   return 0;
 }
