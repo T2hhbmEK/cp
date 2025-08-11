@@ -1,0 +1,58 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define int __int128
+#define sz(x) (int)(x).size()
+using pii = pair<int, int>;
+using vi = vector<int>;
+using vii = vector<vi>;
+using pq = priority_queue<int, vi, greater<>>;
+istream& operator>>(istream& is, __int128& x);
+ostream& operator<<(ostream& os, __int128 x);
+void YES() { cout << "YES\n"; }
+void NO() { cout << "NO\n"; }
+
+constexpr int INF = 0x3f3f3f3f;
+constexpr int MAXN = 2e5 + 10;
+constexpr int MOD = 998244353;
+
+int n;
+int b[MAXN];
+void solve() {  //
+  cin >> n;
+  for (int i = 1; i <= n; ++i) cin >> b[i];
+  int bmin = INF;
+  for (int i = 1; i <= n; ++i) {
+    if (b[i] >= bmin * 2) return NO();
+    bmin = min(bmin, b[i]);
+  }
+  return YES();
+}
+
+signed main() {
+  ios_base::sync_with_stdio(false), cin.tie(nullptr);
+  int t = 1;
+  cin >> t;
+  while (t--) solve();
+  return 0;
+}
+
+istream& operator>>(istream& is, __int128& x) {
+  bool neg = false;
+  char ch = 0;
+  x = 0;
+  while (!isdigit(ch)) neg ^= ch == '-', ch = is.get();
+  while (isdigit(ch)) x = (x << 3) + (x << 1) - (ch & 0xF), ch = is.get();
+  if (!neg) x = -x;
+  return is;
+}
+
+ostream& operator<<(ostream& os, __int128 x) {
+  static char s[40];
+  signed n = 0;
+  if (x == 0) return os << 0;
+  x = x < 0 ? (os << '-', x) : -x;
+  while (x) s[n++] = '0' - x % 10, x /= 10;
+  while (n) os.put(s[--n]);
+  return os;
+}
