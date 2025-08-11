@@ -1,28 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-[[maybe_unused]] constexpr auto inf = 0x3f3f3f3f;
-[[maybe_unused]] constexpr auto nl = '\n';
-[[maybe_unused]] constexpr auto maxn = 1010;
-
-using i32 = int32_t;
-using i64 = int64_t;
-using isize = i64;
-using pii = pair<i32, i32>;
-using vi = vector<i32>;
+#define int __int128
+#define sz(x) (int)(x).size()
+using pii = pair<int, int>;
+using vi = vector<int>;
 using vii = vector<vi>;
-using ai = array<i32, maxn>;
-using aii = array<ai, maxn>;
+using pq = priority_queue<int, vi, greater<>>;
+istream& operator>>(istream& is, __int128& x);
+ostream& operator<<(ostream& os, __int128 x);
+void Yes() { cout << "Yes\n"; }
+void No() { cout << "No\n"; }
 
-#define fi first
-#define se second
-#define rep(i, a, b) for (i32 i = (a); (i) <= (b); ++(i))
-#define per(i, a, b) for (i32 i = (a); (i) >= (b); --(i))
-#define sz(x) static_cast<i32>((x).size())
-#define all(x) (x).begin(), (x).end()
-#define fastio() cin.tie(nullptr)->sync_with_stdio(false)
+constexpr int INF = numeric_limits<int>::max();
+constexpr int MAXN = 2e5 + 10;
+constexpr int MOD = 998244353;
 
-int main() {
-  fastio();
+void solve() {  //
+}
+
+signed main() {
+  ios_base::sync_with_stdio(false), cin.tie(nullptr);
+  int t = 1;
+  // cin >> t;
+  while (t--) solve();
   return 0;
+}
+
+istream& operator>>(istream& is, __int128& x) {
+  bool neg = false;
+  char ch = 0;
+  x = 0;
+  while (!isdigit(ch)) neg ^= ch == '-', ch = is.get();
+  while (isdigit(ch)) x = (x << 3) + (x << 1) - (ch & 0xF), ch = is.get();
+  if (!neg) x = -x;
+  return is;
+}
+
+ostream& operator<<(ostream& os, __int128 x) {
+  static char s[40];
+  signed n = 0;
+  if (x == 0) return os << 0;
+  x = x < 0 ? (os << '-', x) : -x;
+  while (x) s[n++] = '0' - x % 10, x /= 10;
+  while (n) os.put(s[--n]);
+  return os;
 }
