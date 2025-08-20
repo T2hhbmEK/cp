@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define int __int128
+// #define int __int128
+#define int long long
+#define endl '\n'
 #define sz(x) (int)(x).size()
 using pii = pair<int, int>;
 using vi = vector<int>;
